@@ -81,7 +81,7 @@ app.delete('/people/:id', async (req, res) =>{
 // people update route
 app.put('/people/:id', async (req, res) => {
   try {
-    res.json(await People.findByIdAndUpdate(req.params.id, req.body, { new: true }));
+    res.json(await People.findByIdAndUpdate(req.params.id, req.body, { new: true })); // new: true sends back the updated object
   } catch(error) {
     res.status(400).json(error)
   }
